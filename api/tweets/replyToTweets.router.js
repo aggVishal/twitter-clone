@@ -3,7 +3,7 @@ const { tweet, replyToTweet, replyToTweets } = require("./replyToTweets.controll
 
 
 router.post("/reply/:tweetId/:replyMessage", replyToTweet);
-router.post("/:message", tweet);
+router.post("/tweet/:message", tweet);
 router.post("/replyToTweets/:query/:n/:replyMessage", replyToTweets);
 
 module.exports = router;

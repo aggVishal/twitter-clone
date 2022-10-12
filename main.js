@@ -15,7 +15,7 @@ app.use(cors({
 
 
 
-app.use("/api/replyToTweets", replyToTweets);
+app.use("/api", replyToTweets);
 
 
 

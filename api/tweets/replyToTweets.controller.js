@@ -29,7 +29,7 @@ module.exports = {
                 i++;
             }
             return res.status(200).json({
-                message: myRes
+                tweetIds: myRes
             })
         })
 

@@ -7,7 +7,6 @@ module.exports = {
         const tweet = async() => {
             try {
                 const tweets = await twitterClient.v2.search(query);
-                // console.log(tweets);
                 callback(null, tweets);
             } catch (e) {
                 callback(e, null);

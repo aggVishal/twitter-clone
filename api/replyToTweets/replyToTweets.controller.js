@@ -3,13 +3,12 @@ const { tweet, replyToTweet, searchTweets } = require("./replyToTweets.service")
 
 module.exports = {
     replyToTweets: (req, res) => {
-        const query = req.params.query;
-        const n = req.params.n;
-        const replyMessage = req.params.replyMessage;
+        const body = req.body;
+        const n = body.n;
 
         var myRes = [];
 
-        searchTweets(query, async(err, tweets) => {
+        searchTweets(body.query, async(err, tweets) => {
             if (err) {
                 console.log(err);
             }
@@ -22,7 +21,7 @@ module.exports = {
                 myRes.push(tweet.id);
                 console.log(tweet);
 
-                await replyToTweet(tweet.id, replyMessage, (err, result) => {
+                await replyToTweet(tweet.id, body.replyMessage, (err, result) => {
                     if (err) {
                         console.log(err);
                     }

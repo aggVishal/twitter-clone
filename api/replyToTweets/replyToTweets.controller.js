@@ -20,8 +20,9 @@ module.exports = {
 
                 if (i == n) break;
                 myRes.push(tweet.id);
+                console.log(tweet);
 
-                replyToTweet(tweet.id, replyMessage, (err, result) => {
+                await replyToTweet(tweet.id, replyMessage, (err, result) => {
                     if (err) {
                         console.log(err);
                     }
